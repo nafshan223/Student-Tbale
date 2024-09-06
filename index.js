@@ -1,5 +1,4 @@
 const express= require("express")
-const cors=require('cors')
 const envv= require("dotenv")
 const connection = require("./config/mongoose")
 const router = require("./Router/testRouter")
@@ -7,7 +6,7 @@ const router = require("./Router/testRouter")
 const app=express()
 connection()
 app.use(express.json())
-app.use(cors({ origin: 'https://effervescent-yeot-e694e1.netlify.app/',methods: 'GET,POST,PUT,DELETE' }));
+
 
 app.use("/",router)
 envv.config()
