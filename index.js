@@ -7,6 +7,11 @@ const app=express()
 connection()
 app.use(express.json())
 const cors = require('cors');
+app.use(cors({
+  origin: 'https://your-netlify-app.netlify.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
+}));
+app.use(cors());
 
 app.use("/",router)
 envv.config()
