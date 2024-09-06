@@ -7,11 +7,10 @@ const router = require("./Router/testRouter")
 const app=express()
 connection()
 app.use(express.json())
-app.use(cors({ origin: 'https://eclectic-starburst-5e624e.netlify.app/',methods: 'GET,POST,PUT,DELETE' }));
 app.use(cors())
 app.use("/",router)
 envv.config()
 
-const PORT=  4000
+const PORT= process.env.PORT || 4000
 
 app.listen(PORT,console.log(`running in ${PORT} `))
