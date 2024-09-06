@@ -7,7 +7,9 @@ const router = require("./Router/testRouter")
 const app=express()
 connection()
 app.use(express.json())
-app.use(cors())
+const cors = require('cors');
+app.use(cors({ origin: 'https://your-netlify-domain.com' }));
+
 app.use("/",router)
 envv.config()
 
