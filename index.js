@@ -7,10 +7,12 @@ const router = require("./Router/testRouter")
 const app=express()
 connection()
 app.use(express.json())
+const cors = require('cors');
+app.use(cors({ origin: 'https://effervescent-yeot-e694e1.netlify.app/',methods: 'GET,POST,PUT,DELETE' }));
 
 app.use("/",router)
 envv.config()
 
-const PORT=  4001
+const PORT=  4003
 
 app.listen(PORT,console.log(`running in ${PORT} `))
